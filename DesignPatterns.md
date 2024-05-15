@@ -93,4 +93,45 @@ namespace ExemploStrategy{
 
 ```
 
+```
+namespace ExemploStrategy{
 
+  public class Pedido{
+
+    public Pedido(){
+      
+    }
+    
+    public void Pagar(IPagamento metodo, int quantia){
+        metodo.Pagar(quantia);      
+    }
+    
+  }
+  
+  
+}
+
+```
+
+```
+using System;
+
+namespace ExemploStrategy{
+
+  public class PIX:IPagamento{
+
+    public String ChavePIX {get; set;}
+    
+    public PIX(String chavePix){
+      this.ChavePIX = chavePix;
+    }
+    
+    public void Pagar(int quantia){
+      Console.WriteLine("Pagto com PIX: " + quantia + " chave pix: " + this.ChavePIX);
+    }
+    
+  }
+
+}
+
+```
